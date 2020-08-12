@@ -33,7 +33,10 @@ app.post('/contact/send', function(req, res) {
         }
     });
     var mailOptions = {
-        from: 'Brad',
+        from: 'Brad <rahul1ramesh.mec@gmail.com>',
+        to: 'rahulramesh13.rr@gmail.com',
+        subject: 'website',
+        text: 'You just got ba mail from ' + req.body.name + " Email : " + req.body.email + " Message : " + req.body.message,
     }
 });
 app.listen(3000);
