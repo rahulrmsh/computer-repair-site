@@ -28,7 +28,7 @@ app.post('/contact/send', function(req, res) {
     var transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-            user: 'rahulramesh13.rr@gmail.com',
+            user: 'kinoeyecinemas@gmail.com',
             pass: ''
         }
     });
@@ -37,7 +37,16 @@ app.post('/contact/send', function(req, res) {
         to: 'rahulramesh13.rr@gmail.com',
         subject: 'website',
         text: 'You just got ba mail from ' + req.body.name + " Email : " + req.body.email + " Message : " + req.body.message,
-    }
+    };
+    transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+            console.log(error);
+            res.redirect('/');
+        } else {
+            console.log('Message Sent.');
+            res.redirect('/');
+        }
+    });
 });
 app.listen(3000);
 console.log("Server is running on Port 3000 ... ");
