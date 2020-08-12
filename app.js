@@ -19,7 +19,10 @@ app.get('/about', function(req, res) {
     res.render('about', { 'heading': 'About Us', 'subtitle': 'On a Mission to Civilize Computers.' });
 });
 app.get('/contact', function(req, res) {
-    res.render('contact', { 'heading': 'About Us', 'subtitle': 'On a Mission to Civilize Computers.' });
+    res.render('contact', {
+        'heading': 'Contact',
+        'subtitle': 'Feel Free to Contact us for Help and Feedback.'
+    });
 });
 app.listen(3000);
 console.log("Server is running on Port 3000 ... ");
