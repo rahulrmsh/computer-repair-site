@@ -24,5 +24,17 @@ app.get('/contact', function(req, res) {
         'subtitle': 'Feel Free to Contact us for Help and Feedback.'
     });
 });
+app.post('/contact/send', function(req, res) {
+    var transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'rahulramesh13.rr@gmail.com',
+            pass: ''
+        }
+    });
+    var mailOptions = {
+        from: 'Brad',
+    }
+});
 app.listen(3000);
 console.log("Server is running on Port 3000 ... ");
