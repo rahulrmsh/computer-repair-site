@@ -13,7 +13,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', function(req, res) {
-    res.render('index');
+    res.render('index', { 'heading': 'Computer and Laptop Repair Service ', 'subtitle': '  Are you new in the city? Searching for a Computer and Laptop Repair? We give you the best professional Computer and Laptop services in Kerala.' });
+});
+app.get('/about', function(req, res) {
+    res.render('about', { 'heading': 'About Us', 'subtitle': 'On a Mission to Civilize Computers.' });
+});
+app.get('/contact', function(req, res) {
+    res.render('contact', { 'heading': 'About Us', 'subtitle': 'On a Mission to Civilize Computers.' });
 });
 app.listen(3000);
 console.log("Server is running on Port 3000 ... ");
